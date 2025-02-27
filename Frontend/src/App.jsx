@@ -1,33 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import React from 'react'
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import Home from './pages/Home'
+import Doctors from './pages/Doctors'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Login from './pages/Login'
+import Myprofile from './pages/Myprofile'
+import Myappointments from './pages/Myappointments'
+import Appointment from './pages/Appointment'
+import Navbar from './components/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+      <Navbar/>
+        <Routes>
+        
+          <Route path="/" element={<Home />}>
+          <Route path="/doctors" element={<Doctors />}/>
+          <Route path="/doctors/:speciality" element={<Doctors />}/>
+          <Route path="/about" element={<About />}/>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/my-profile" element={<Myprofile />}/>
+          <Route path="/my-appointments" element={<Myappointments />}/>
+          <Route path="/appointment/:docId" element={<Appointment />}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
