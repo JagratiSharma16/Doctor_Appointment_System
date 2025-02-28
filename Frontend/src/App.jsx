@@ -18,7 +18,6 @@ function App() {
       <BrowserRouter>
       <Navbar/>
         <Routes>
-        
           <Route path="/" element={<Home />}>
           <Route path="/doctors" element={<Doctors />}/>
           <Route path="/doctors/:speciality" element={<Doctors />}/>
