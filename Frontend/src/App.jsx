@@ -11,6 +11,7 @@ import Myappointments from './pages/Myappointments'
 import Appointment from './pages/Appointment'
 import Navbar from './components/Navbar'
 
+
 function App() {
 
   return (
