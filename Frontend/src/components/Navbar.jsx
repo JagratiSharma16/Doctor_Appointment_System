@@ -9,9 +9,9 @@ const Navbar = () => {
     const [token, setToken] = useState(true)
 
     return (
-        <div className="flex items-center justify-between text-5m py-5 mb-5 border-b-3 border-b-gray-400 ml-30 mr-30 shadow-lg">
-            <img className="w-45 cursor-pointer" src={assets.logo} alt="image" />
-            <ul className="hidden md:flex items-start gap-10 font-bold text-2xl">
+        <div className="flex items-center justify-between text-sm py-5 mb-5 border-b-3 border-b-gray-400 ml-30 mr-30 shadow-lg">
+            <img className="w-45 cursor-pointer md:w-65" src={assets.logo} alt="image" />
+            <ul className="hidden md:flex items-start md:gap-20 md:text-4xl gap-10 font-bold text-2xl">
                 <NavLink to="/">
                     <li className="py-2">Home</li>
                     <hr className="border-none outline-none h-1 bg-blue-500 w-5/5 m-auto hidden" />
@@ -33,9 +33,9 @@ const Navbar = () => {
                 {
                     token 
                     ? <div className="flex items-center gap-2 cursor-pointer group relative">
-                        <img className="w-15 rounded-full" src={assets.profile_pic} alt="image" />
-                        <img className="w-4" src={assets.dropdown_icon} alt="drop" />
-                        <div className="absolute top-0 right-0 pt-22 text-base font-medium text-gray-600 z-20 hidden group-hover:block">
+                        <img className="md:w-15 rounded-full sm:w-6 lg:w-20 " src={assets.profile_pic} alt="image" />
+                        <img className="w-4 md:w-5" src={assets.dropdown_icon} alt="drop" />
+                        <div className="absolute top-0 right-0 pt-22 md:pt-28 text-base font-medium text-gray-600 z-20 hidden group-hover:block">
                             <div className="min-w-58 text-[20px] bg-stone-100 rounded flex flex-col gap-4 p-5">
                                 <p onClick={()=>navigate("my-profile")} className="hover:text-black cursor-pointer">My Profile</p>
                                 <p onClick={()=>navigate("my-appointments")} className="hover:text-black cursor-pointer">My Appointments</p>
