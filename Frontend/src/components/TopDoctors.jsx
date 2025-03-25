@@ -6,7 +6,7 @@ const TopDoctors = () => {
     const navigate= useNavigate()
   return (
     <div className='flex flex-col items-center gap-4 my-16 text-gray-900 md:mx-10'>
-        <h1 className='md:text-4xl lg:text-6xl font-bold' >Top Doctors to Book</h1>
+        <h1 className='md:text-4xl 2xl:text-6xl font-bold' >Top Doctors to Book</h1>
         <p className='sm:w-1/3 lg:text-2xl text-center text-sm'>Simply browse through our extensive list of trusted doctors.</p>
         <div className='w-full grid md:grid-cols-4 lg:grid-cols-5 md:gap-2 lg:gap-4 pt-5 gap-y-6 px-7 md:ml-6 lg:ml-20 md:mr-6 lg:mr-20  sm-px-0 ' >
             {doctors.slice(0,10).map((item,index)=>(
