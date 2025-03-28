@@ -3,16 +3,16 @@ import { doctors } from "../assets/assets_frontend/assets";
 
 export const AppContext = createContext();
 
-const AppContextProvider = (props) =>{
+const AppContextProvider = ({ children }) => {
     const value = {
         doctors
-    }
+    };
 
-    return(
+    return (
         <AppContext.Provider value={value}>
-            {props.children}
+            {children}
         </AppContext.Provider>
-    )
-}
+    );
+};
 
-export default AppContextProvider
+export default AppContextProvider;
