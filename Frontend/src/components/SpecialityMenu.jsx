@@ -8,9 +8,9 @@ const SpecialityMenu = () => {
       <h1 className='text-3xl 2xl:text-5xl font-medium'>Find by Speciality</h1>
       <p className='xl:w-1/3 text-center 2xl:text-2xl text-md'>Simply browse through our extensive list of trsusted doctors, schedule your appointment hasle-free.</p>
       <div className='flex sm:justify-center gap-4 pt-5 w-full overflow-scroll'>
-        {specialityData.map((item,index)=>(
-          <Link onClick={()=>scrollTo(0,0)}className='flex flex-col items-center text-xs xl:text-2xl cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500' key={index} to={`/doctors/${item.speciality}`}>
-            <img className='w-16 xl:w-24 mb-3 2xl:w-40 2xl:mb-4 ' src={item.image} alt=""/>
+        {specialityData.map((item, index) => (
+          <Link onClick={() => scrollTo(0, 0)} className='flex flex-col items-center text-xs xl:text-2xl cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500' key={index} to={`/doctors/${item.speciality}`}>
+            <img className='w-16 xl:w-24 mb-3 2xl:w-40 2xl:mb-4 ' src={item.image} alt="" />
             <p>{item.speciality}</p>
           </Link>
         ))}
