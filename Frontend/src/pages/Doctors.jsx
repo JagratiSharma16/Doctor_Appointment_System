@@ -19,18 +19,18 @@ const Doctors = () => {
     applyfilter()
   },[ doctors, speciality])
   return (
-    <div className='flex-row m-10 py-5 '>
-      <p className='px-4'>Browse through the doctors specialist.</p>
-      <div className='flex relative '>
-        <div className=''>
-          <p>General Physician</p>
-          <p>Gynecologist</p>
-          <p>Dermatologist</p>
-          <p>Pediatricians</p>
-          <p>Neurologist</p>
-          <p>Gastroentrologist</p>
+    <div className='px-19'>
+      <p className='text-gray-600 xl:text-[20px] 2xl:text-[30px]'>Browse through the doctors specialist.</p>
+      <div className='flex flex-col md:flex-row items-start gap-5 mt-5 xl:mt-7 2xl:mt-10'>
+        <div className='flex-col gap-4 text-sm text-gray-600'>
+          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-grey-300 rounded transition-all cursor-pointer`}>General Physician</p>
+          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-grey-300 rounded transition-all cursor-pointer`}>Gynecologist</p>
+          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-grey-300 rounded transition-all cursor-pointer`}>Dermatologist</p>
+          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-grey-300 rounded transition-all cursor-pointer`}>Pediatricians</p>
+          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-grey-300 rounded transition-all cursor-pointer`}>Neurologist</p>
+          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-grey-300 rounded transition-all cursor-pointer`}>Gastroentrologist</p>
         </div>
-        <div className='w-full grid grid-cols-auto gap-4 gap-y-6'>
+        <div className=' w-full grid xl:grid-cols-2 2xl:grid-cols-5 md:gap-2 lg:gap-4 pt-5 gap-y-6 px-7 md:ml-6 lg:ml-20 md:mr-6 lg:mr-20  sm-px-0  grid-cols-auto gap-4 '>
           {
             filterdoc.map((item, index) => (
               <div onClick={() => navigate(`/appointment/${item._id}`)} className="border border-blue-200 md:ml-6  rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-15px] transition-all duration-300" key={index}>
