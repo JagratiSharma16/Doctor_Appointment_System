@@ -30,7 +30,7 @@ const Doctors = () => {
           <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-grey-300 rounded transition-all cursor-pointer`}>Neurologist</p>
           <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-grey-300 rounded transition-all cursor-pointer`}>Gastroentrologist</p>
         </div>
-        <div className=' w-full grid xl:grid-cols-2 2xl:grid-cols-5 md:gap-2 lg:gap-4 pt-5 gap-y-6 px-7 md:ml-6 lg:ml-20 md:mr-6 lg:mr-20  sm-px-0  grid-cols-auto gap-4 '>
+        <div className=' w-full grid xl:grid-cols-4 2xl:grid-cols-5 xl:gap-2 2xl:gap-4 2xl:pt-5 xl:pt-0 gap-y-6 xl:px-2 2xl:px-6 xl:ml-6 2xl:ml-20 xl:mr-6 2xl:mr-20  sm-px-0  grid-cols-auto gap-4 '>
           {
             filterdoc.map((item, index) => (
               <div onClick={() => navigate(`/appointment/${item._id}`)} className="border border-blue-200 md:ml-6  rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-15px] transition-all duration-300" key={index}>
