@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <div className="flex items-center justify-between text-sm py-5 mb-5 border-b-3 border-b-gray-400 ml-30 mr-30 shadow-lg">
-            <img className="w-45 cursor-pointer xl:w-44 2xl:w-65" src={assets.logo} alt="image" />
+            <img onClick={()=>navigate("/")} className="w-45 cursor-pointer xl:w-44 2xl:w-65" src={assets.logo} alt="image" />
             <ul className="hidden xl:flex items-start xl:gap-20 xl:text-xl gap-10 font-bold 2xl:text-3xl">
                 <NavLink to="/">
                     <li className="py-2">Home</li>
