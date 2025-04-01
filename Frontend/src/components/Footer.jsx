@@ -4,8 +4,8 @@ import { assets } from "../assets/assets_frontend/assets"
 
 const Footer = () => {
   return (
-    <div clasName = 'md:mx-10'>
-        <div className = 'flex flex-col px-15 sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm' >
+    <div clasName = 'md:mx-7 xl:mx-7 2xl:mx-7  '>
+        <div className = 'flex flex-col px-15 sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm 2xl:text-[15px] ml-14' >
             {/*-----------Left section----------*/}
             <div>
                 <img className = 'mb-5 w-40'src ={assets.logo} alt="" />
@@ -36,7 +36,7 @@ const Footer = () => {
             {/*-------Copyright Text----------*/}
             <div>
                 <hr className = 'text-gray-200'/>
-                <p className='py-5 text-sm text-center  text-gray-700'>Copyright 2024@ Prescripto - All Right Reserved</p>
+                <p className='py-5 text-sm text-center 2xl:text-[20px] text-gray-700'>Copyright 2024@ Prescripto - All Right Reserved</p>
             </div>
         </div>
     </div>
