@@ -1,16 +1,27 @@
-import React, { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../context/AppContext'
+import { useNavigate } from 'react-router-dom'
 
-const TopDoctors = () => {
-    const navigate= useNavigate()
+const RelatedDoctors = ({docId, speciality}) => {
     const {doctors} = useContext(AppContext)
+    const [reldoc,setRelDoc]= useState([])
+    const navigate = useNavigate()
+
+useEffect(()=>{
+    if (doctors.length > 0 && speciality){
+        const doctordata=  doctors.filter((doc)=> doc.speciality === speciality && doc._id != docId)
+        setRelDoc(doctordata)
+    }
+
+},[doctors,docId,speciality])
+
   return (
+    // <div>Related Doctors</div>
     <div className='flex flex-col items-center gap-4 my-16 text-gray-900 2xl:mx-30 xl:mx-20'>
-        <h1 className='md:text-4xl 2xl:text-6xl font-bold' >Top Doctors to Book</h1>
+        <h1 className='md:text-4xl 2xl:text-5xl font-bold' >Related Doctors</h1>
         <p className='sm:w-1/3 lg:text-2xl text-center text-sm'>Simply browse through our extensive list of trusted doctors.</p>
-        <div className='w-full grid md:grid-cols-4 lg:grid-cols-5 md:gap-2 lg:gap-4 pt-5 gap-y-6 px-7 md:ml-6 lg:ml-20 md:mr-6 lg:mr-20  sm-px-0 ' >
-            {doctors.slice(0,10).map((item,index)=>(
+        <div className='w-full grid xl:grid-cols-4 2xl:grid-cols-5 xl:gap-2 2xl:gap-4 pt-5 gap-y-6 px-7 xl:ml-6 2xl:ml-20 xl:mr-6 2xl:mr-20  sm-px-0 ' >
+            {reldoc.slice(0,10).map((item,index)=>(
                 <div onClick={()=>{navigate(`/appointment/${item._id}`); scrollTo(0,0)}} className="border border-blue-200 md:ml-6  rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-15px] transition-all duration-300" key={index}>
                     <img className="bg-blue-50 w-full  " src={item.image} alt="imhg" />
                     <div className='p-7'>
@@ -28,4 +39,4 @@ const TopDoctors = () => {
   )
 }
 
-export default TopDoctors
+export default RelatedDoctors

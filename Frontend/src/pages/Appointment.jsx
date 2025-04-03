@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
-import { useState } from 'react'
 import { assets } from '../assets/assets_frontend/assets'
+import RelatedDoctors from '../components/RelatedDoctors'
 
 const Appointment = () => {
 
@@ -107,14 +107,24 @@ const Appointment = () => {
           {docSlots.length > 0 &&
             docSlots.map((item, index) => (
               <div
-                className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? "bg-indigo-300 text-white" : "border border-gray-200"}`} key={index}>
+                onClick={() => setSlotIndex(index)} className={`text-center text-xl py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? "bg-indigo-500 text-white" : "border border-gray-200"}`} key={index}>
                 <p>{item[0] && days[item[0].datetime.getDay()]}</p>
                 <p>{item[0] && item[0].datetime.getDate()}</p>
               </div>
             ))}
         </div>
+        <div className='flex items-center gap-3  mr-70  w-full overflow-x-scroll mt-8 '>
+          {docSlots.length && docSlots[slotIndex].map((item, index) => (
+            <p onClick={() => setSlotTime(item.time)} className={`text-xl font-light flex-shrink-0 px-5 py-2 border rounded-full cursor-pointer ${item.time === slotTime ? 'bg-indigo-500 text-white' : 'text-gray-400 border border-gray-300'}`} key={index}>
+              {item.time.toLowerCase()}
+            </p>
+          ))}
+        </div>
+      
+      <button className='bg-indigo-500 text-white text-2xl font-light px-14 py-3 rounded-full mt-8'>Book an Appointment</button>
       </div>
-
+      {/* Listing The Related Doctors */}
+      <RelatedDoctors docId={docId} speciality={docInfo.speciality}></RelatedDoctors>
     </div>
   )
 }
