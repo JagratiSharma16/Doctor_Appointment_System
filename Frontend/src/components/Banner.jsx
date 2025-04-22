@@ -6,7 +6,7 @@ const Banner = () => {
 
     const navigate = useNavigate();
   return (
-    <div className = 'flex bg-indigo-500 rounded-lg px-6 sm:px-10 md:px-14 lg:px-12 xl:px-20 2xl:px-30 my-20 2xl:mx-30 xl:mx-20'>
+    <div className = 'flex bg-indigo-500 rounded-lg px-6 m-2 sm:px-10 md:px-14 lg:px-12 xl:px-20 2xl:px-30 my-20 2xl:mx-30 xl:mx-20'>
         {/* ------------Left side----------*/}
         <div className = 'flex-1 py-8 sm:py-16 lg:py-24 lg:pl-5 2xl:py-28 2xl:pl-7'>
             <div className = 'text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-white'>

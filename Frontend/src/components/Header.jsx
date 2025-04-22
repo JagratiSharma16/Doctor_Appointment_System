@@ -3,7 +3,7 @@ import {assets} from "../assets/assets_frontend/assets"
 
 const Header = () => {
     return (
-        <div className='flex flex-col 2xl:flex-row md:flex-row flex-wrap bg-indigo-500 rounded-lg  2xl:mx-30 xl:mx-20 xl:pl-10 2xl:pl-10'>
+        <div className='flex flex-col 2xl:flex-row md:flex-row flex-wrap bg-indigo-500 rounded-lg mx-3 2xl:mx-30 xl:mx-20 xl:pl-10 2xl:pl-10'>
             {/* --------Left side-------- */}
             <div className='xl:w-1/2 md:pl-5  flex flex-col items-start justify-center gap-4 py-10 m-auto 2xl:py-[10vw] 2xl:mb-[-30px]'>
                 <p className='text-lg xl:text-4xl 2xl:text-6xl text-white font-semibold leading-tight md:leading-tight lg:leading-tight'>
