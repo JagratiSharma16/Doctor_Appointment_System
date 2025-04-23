@@ -8,7 +8,8 @@ const RelatedDoctors = ({docId, speciality}) => {
     const navigate = useNavigate()
 
 useEffect(()=>{
-    if (doctors.length > 0 && speciality){
+    if (doctors.length > 0 && speciality)
+        {
         const doctordata=  doctors.filter((doc)=> doc.speciality === speciality && doc._id != docId)
         setRelDoc(doctordata)
     }
@@ -16,7 +17,6 @@ useEffect(()=>{
 },[doctors,docId,speciality])
 
   return (
-    // <div>Related Doctors</div>
     <div className='flex flex-col items-center gap-4 my-16 text-gray-900 2xl:mx-30 xl:mx-20'>
         <h1 className='md:text-4xl 2xl:text-5xl font-bold' >Related Doctors</h1>
         <p className='sm:w-1/3 lg:text-2xl text-center text-sm'>Simply browse through our extensive list of trusted doctors.</p>
